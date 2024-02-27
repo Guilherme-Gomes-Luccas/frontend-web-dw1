@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Layout 2</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        #content{
+            display: flex;
+            height: 951px;
+        }
+
+        #sidebar{
+            height: 100%;
+            width: 20%;
+            background: red;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .sidebar_content{
+            background: rgb(92, 26, 26);
+            width: 100px;
+            height: 100px;
+            margin: 10px 0 10px 0;
+        }
+
+        #main{
+            width: 80%;
+            height: 100%;
+            background: blue;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #main_header{
+            height: 100px;
+            width: 100%;
+            display: flex;
+            background: black;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .main_header_content{
+            width: 50px;
+            height: 50px;
+            background: cyan;
+            margin: 0 20px 0 0;
+        }
+
+        #main_content{
+            background: rgb(202, 102, 102);
+            width: 100%;
+            height: 700px;
+        }
+
+        #main_title{
+            background: red;
+            width: 40%;
+            height: 70px;
+            margin: 20px 0 20px 20px;
+        }
+
+        #post_content{
+            background: red;
+            width: 70%;
+            height: 550px;
+            margin: 0 0 0 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="sidebar">
+            <div class="sidebar_content"></div>
+            <div class="sidebar_content"></div>
+        </div>    
+        <div id="main">
+            <div id="main_header">
+                <div class="main_header_content"></div>
+                <div class="main_header_content"></div>
+            </div>
+            <div id="main_content">
+                <div id="main_title"></div>
+                <div id="post_content"></div>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</html>
