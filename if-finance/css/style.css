@@ -1,6 +1,8 @@
 html, body{
     margin: 0;
     padding: 0;
+    background: black;
+    color: white;
 }
 
 header {
@@ -22,12 +24,6 @@ header {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-nav {
-    width: 500px;
-    height: 45px;
-    background: #91f196;
-}
-
 .logotipo img {
     width: 45px;
     height: 45px;
@@ -35,5 +31,25 @@ nav {
 
 .logotipo h1{
     margin: 9px 0 0 0;
-    color: white;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    min-height: calc(100vh - 307px);
+    padding: 16px;
+}
+
+footer {
+    background: #351801;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

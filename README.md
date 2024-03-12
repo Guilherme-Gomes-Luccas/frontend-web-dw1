@@ -29,3 +29,8 @@ git commit -m "primeiro commit"
 # Publicar todos commits (mandar para o repositório na web)
 git push
 ```
+
+#  Clonar repositório
+```
+git clone [url do git]
+```
