@@ -1,11 +1,11 @@
 html, body{
     margin: 0;
     padding: 0;
-    background: black;
+    background: rgb(43, 42, 42);
     color: white;
 }
 
-header {
+body > header {
     width: calc(100% - 40px);
     height: 70px;
     background: #351801;
@@ -33,6 +33,10 @@ header {
     margin: 9px 0 0 0;
 }
 
+.logotipo h1 span {
+    color: rgb(117, 184, 17);
+}
+
 nav ul{
     list-style: none;
     display: flex;
@@ -41,15 +45,83 @@ nav ul{
     padding: 0;
 }
 
-main {
+body > main {
     min-height: calc(100vh - 307px);
     padding: 16px;
+    display: inline-flex;
+    gap: 16px;
 }
 
-footer {
+body > footer {
     background: #351801;
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.card-ticker{
+    width: 280px;
+    background: #351801;
+    border-radius: 20px;
+    padding: 12px;
+}
+
+.card-ticker header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-ticker header h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card-ticker header h2 span {
+    font-weight: normal;
+    color: rgb(211, 199, 31);
+}
+
+.card-ticker header h1 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card-ticker main p {
+    font-size: 32px;
+    margin: 28px 0 2px 0;
+}
+
+.card-ticker main span {
+    color: #cfb5b5;
+}
+
+.card-ticker main span:nth-child(2) {
+    background: green;
+    padding: 3px 16px;
+    margin: 0 8px 0 0;
+    border-radius: 17px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.card-ticker footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 0 0;
+}
+.card-ticker footer div:nth-child(2) { 
+    text-align: right;
+}
+
+.card-ticker footer div p {
+    margin: 0;
+    font-size: 18px;
+    margin-top: 42px;
+}
+
+.card-ticker footer div span {
+    font-size: 14px;
+    color: #cfb5b5;
 }
