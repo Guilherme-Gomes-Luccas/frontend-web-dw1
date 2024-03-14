@@ -9,8 +9,8 @@ git init
 
 ```
 # Configura seu nome e email globalmente no git
-git config --global user.name "Guilherme-Gomes-Luccas"
-git config --global user.email guilhermegomes.luccas@gmail.com
+git config --global user.name "username"
+git config --global user.email email
 ```
 
 ```
