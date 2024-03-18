@@ -15,6 +15,26 @@ body > header {
     padding: 0 16px;
 }
 
+body > header nav a{
+    color: #fff;
+    padding: 0 0 5px 0;
+    text-decoration: none;
+}
+
+body > header nav a:visited{
+    color: gray;
+}
+
+body > header nav a:hover{
+    color: rgb(117, 184, 17);
+    border-bottom: 3px solid rgb(117, 184, 17);
+}
+
+body > header nav a.active{
+    color: rgb(95, 150, 12);
+    border-bottom: 3px outset rgb(95, 150, 12);
+}
+
 .logotipo {
     width: 200px;
     height: 45px;
@@ -48,7 +68,8 @@ nav ul{
 body > main {
     min-height: calc(100vh - 307px);
     padding: 16px;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
@@ -62,6 +83,7 @@ body > footer {
 
 .card-ticker{
     width: 280px;
+    height: fit-content;
     background: #351801;
     border-radius: 20px;
     padding: 12px;
