@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>If Finance</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            body > main {
+                flex-direction: column;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="logotipo">
+                <img src="img/logo-finance.svg" alt="Logo do If Finance">
+                <h1><span>IF</span>inance</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html" >Home</a></li>
+                    <li><a href="./destaques.html">destaques</a></li>
+                    <li><a href="./quem-somos.html">Quem Somos</a></li>
+                    <li><a href="./contato.html" class="active">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            
+            <form action="exemplo-server.php" method="POST">
+                <h1>Cadastre-se</h1>
+                <div class="field">
+                    <FIeldset>
+                        <legend>Dados Pessoais</legend>
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome">
+                        <label for="sobrenome">Sobrenome:</label>
+                        <input type="text" name="sobrenome" id="sobrenome">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email">
+                        <label for="pass">Senha:</label>
+                        <input type="password" name="pass" id="pass">
+                    </FIeldset>
+
+                    <fieldset>
+                        <legend>Endereço</legend>
+                        <label for="rua">Rome:</label>
+                        <input type="text" name="rua" id="rua">
+                        <label for="cidade">Cidade:</label>
+                        <select name="cidade">
+                            <option value="caragua">Caraguatatuba</option>
+                            <option value="ubatuba">Ubatuba</option>
+                            <option value="sao_sebastiao">São sebastião</option>
+                        </select>
+                        <h5 for="frequencia">Com que frequencia visita o litoral?</h5>
+                        <div>                    
+                            <input type="radio" name="frequencia" value="muito_pouco" id="muito_pouco"> <label for="muito_pouco">Muito pouco</label>
+                        </div>
+                        <div>                    
+                            <input type="radio" name="frequencia" value="pouco" id="pouco"> <label for="pouco">Pouco</label>
+                        </div>
+                        <div>                    
+                            <input type="radio" name="frequencia" value="eventualmente" id="eventualmente" checked> <label for="eventualmente">Eventualmente</label>
+                        </div>
+                        <div>                    
+                            <input type="radio" name="frequencia" value="muito" id="muito"> <label for="muito">Muito</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <fieldset class="termo">
+                    <legend>Termos de uso</legend>
+                    <div class="a"></div>
+                        <input type="checkbox" name="termos" value="Sim">
+                        <label for="termos">Aceita os termos de uso do site?</label>
+
+                        <input type="checkbox" name="newsletter" value="Sim">
+                        <label for="newsletter">Gostaria de receber propaganda?</label>
+                    </div>
+                </fieldset>
+                
+
+                    <br><br>
+                    <label for="comentario">Deixei seu comentário:</label><br>
+                    <textarea name="comentario" id="comentario" rows="8" cols="50"></textarea><br>
+                    <input type="submit" value="Enviar">
+            </form>
+        </main>
+        <footer>
+            <p>Copyright 2024 @Guilherme Gomes Luccas Rodrigues</p>
+        </footer>
+    </body>
+
+</html>
