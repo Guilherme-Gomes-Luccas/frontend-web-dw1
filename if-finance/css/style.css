@@ -250,3 +250,44 @@ input[type=submit]:active {
 #banner h2 {
     margin: 40px 0 0 40px;
 }
+
+nav div{
+    display: none;
+}
+
+@media (width <= 674px) {
+    nav ul {
+        display: none;
+    }
+
+    nav div{
+        display: block;
+    }
+    
+}
+
+@media (457px <= width <= 656px) {
+    .card-ticker{
+        width: 220px;
+    }
+
+    body > main {
+        justify-content: space-around;
+    }
+}
+
+@media (width <= 535px) {
+    .card-ticker{
+        width: 180px;
+    }
+}
+
+@media (width <= 456px) {
+    .card-ticker {
+        width: 80%;
+    }
+
+    body > main {
+        justify-content: center;
+    }
+}
