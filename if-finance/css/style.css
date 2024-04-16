@@ -54,8 +54,14 @@ body > header nav a.active{
     margin: 9px 0 0 0;
 }
 
-.logotipo h1 span {
+.logotipo h1 span.if{
     color: rgb(117, 184, 17);
+}
+
+@media (width <= 300px) {
+    .logotipo h1 span.name{
+        display: none;
+    }
 }
 
 nav ul{
