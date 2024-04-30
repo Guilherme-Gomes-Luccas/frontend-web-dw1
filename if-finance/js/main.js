@@ -83,27 +83,131 @@ console.log(user[mostrar])
 console.log(user.email)
 console.log(user.endereco.rua) */
 
-function addCard() {
+const allStock = [
+    {
+        bolsa: "NASDAQ", 
+        codigo: "AAPL", 
+        empresa: "Apple Inc", 
+        setor: "Technology Service",
+        site: "apple.com",
+        valor: 25080,
+        variacao: 0.35,
+        nAcoes: 40
+    },
+    {
+        bolsa: "NASDAQ", 
+        codigo: "MSFT", 
+        empresa: "Microsoft Corp", 
+        setor: "Technology Service",
+        site: "microsoft.com",
+        valor: 50234,
+        variacao: -1.5,
+        nAcoes: 20
+    },
+    {
+        bolsa: "NASDAQ", 
+        codigo: "MSFT", 
+        empresa: "Meta Platforms Inc", 
+        setor: "Technology Service",
+        site: "meta.com",
+        valor: 43262,
+        variacao: 2.3,
+        nAcoes: 5
+    },
+    {
+        bolsa: "NASDAQ", 
+        codigo: "GOOGL", 
+        empresa: "Alphabet Inc Class A",
+        setor: "Technology Service", 
+        site: "google.com",
+        valor: 16615,
+        variacao: -0.78,
+        nAcoes: 8
+    },
+    {
+        bolsa: "NASDAQ", 
+        codigo: "NVDA", 
+        empresa: "NVIDIA Copr", 
+        setor: "Technology Service",
+        site: "nvidia.com",
+        valor: 87757,
+        variacao: 0.02,
+        nAcoes: 13
+    }
+]
+
+function addCard(stock) {
     const listaCards = document.querySelector('body > main')
     listaCards.innerHTML = listaCards.innerHTML + `
         <div class="card-ticker">
             <header>
-                <h2><span>NASDAQ:</span> APPL</h2>
-                <h1>Apple</h1>
+                <h2><span>${stock.bolsa}:</span> ${stock.codigo}</h2>
+                <h1>${stock.empresa}</h1>
             </header>
             <main>
-                <p>R$ 250,80</p>
-                <span>▲ 0,35%</span><span>R$ 0,60</span>
+                <p>R$ ${realFormat(+stock.valor/100)}</p>
+                <span ${stock.variacao < 0 ? 'style="background: #FF0000;"' : ''}> ${stock.variacao < 0 ? '▼' : '▲'} ${stock.variacao}%</span>
+                <span>R$ ${realFormat((stock.valor/100) * (stock.variacao/100))}</span>
             </main>
             <footer>
                 <div>
-                    <p>40</p>
+                    <p>${stock.nAcoes}</p>
                     <span>Ações</span>
                 </div>
                 <div>
-                    <p>R$ 34853,45</p>
+                    <p>R$ ${realFormat(stock.nAcoes * (stock.valor/100))}</p>
                     <span>Posição</span>
                 </div>
             </footer>
         </div>`
+}
+
+function addTable(stock){
+    const inserirLinhasDestaque = document.querySelector('#destaqueTable')
+    inserirLinhasDestaque.innerHTML = inserirLinhasDestaque.innerHTML +  `
+        <tr>
+            <td>${stock.bolsa}</td>
+            <td>${stock.codigo}</td>
+            <td>${stock.empresa}</td>
+            <td>${stock.setor}</td>
+            <td>${stock.site}</td>
+        </tr>
+    `
+    const inserirLinhasAcoes = document.querySelector('#acoesTable')
+    inserirLinhasAcoes.innerHTML = inserirLinhasAcoes.innerHTML +  `
+        <tr>
+            <td>${stock.bolsa}</td>
+            <td>${stock.codigo}</td>
+            <td>${stock.empresa}</td>
+            <td>${stock.valor}</td>
+            <td>${stock.variacao}</td>
+            <td>${stock.nAcoes}</td>
+        </tr>
+    `
+}
+
+let cont = 0;
+
+function addRowspan(){
+
+}
+
+function realFormat(valor){
+    return valor.toFixed(2).toString().replace('.',',')
+}
+
+function loadCards() {
+    //for(let i = 0; i < allStock.length; i++){
+    //    addCard(allStock[i])
+    //}
+
+    //allStock.map((stock) => {
+    //    addCard(stock)
+    //})
+
+    allStock.map(addCard)
+}
+
+function loadTables() {
+    allStock.map(addTable)
 }

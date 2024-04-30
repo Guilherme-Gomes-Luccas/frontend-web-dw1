@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>If Finance</title>
         <link rel="stylesheet" href="css/style.css">
+        <script src="./js/main.js"></script>
         <style>
             body > main{
                 flex-direction: column;
@@ -13,7 +14,7 @@
         </style>
     </head>
 
-    <body>
+    <body onload="loadTables()">
         <header>
             <div class="logotipo">
                 <img src="img/logo-finance.svg" alt="Logo do If Finance">
@@ -30,55 +31,30 @@
         </header>
         <main>
             <h1>Tabela de Ações em destaque</h1>
-            <table>
+            <table id="destaqueTable">
                 <tr>
                     <th colspan="5" style="text-align: center;">Destaque em cada bolsa</th>
                 </tr>
                 <tr>
-                    <th>Bolsa</th>
+                    <th rowspan="2">Bolsa</th>
                     <th>Ticker</th>
                     <th>Empresa</th>
                     <th>Setor</th>
                     <th>Site</th>
                 </tr>
+            </table>
+
+            <table id="acoesTable">
                 <tr>
-                    <td rowspan="3">NASDAQ</td>
-                    <td>AAPL</td>
-                    <td>Apple Inc</td>
-                    <td>Eletronic Technology</td>
-                    <td>apple.com</td>
+                    <th colspan="6" style="text-align: center;">Ações em cada bolsa</th>
                 </tr>
                 <tr>
-                    <td>MSFT</td>
-                    <td>Microsoft Corp.</td>
-                    <td>Technology Services</td>
-                    <td>microsoft.com</td>
-                </tr>
-                <tr>
-                    <td>NVIDIA</td>
-                    <td>Apple Inc</td>
-                    <td>Eletronic Technology</td>
-                    <td>nvidia.com</td>
-                </tr>
-                <tr>
-                    <th rowspan="2">NYSE</th>
-                    <td>LLY</td>
-                    <td>Elo Lilly and Company</td>
-                    <td>Health Technology</td>
-                    <td>lilly.com</td>
-                </tr>
-                <tr>
-                    <td>LLY</td>
-                    <td>Elo Lilly and Company</td>
-                    <td>Health Technology</td>
-                    <td>lilly.com</td>
-                </tr>
-                <tr>
-                    <th >IBOVESPA</th>
-                    <td>ITUB3</td>
-                    <td>Itaú Unibanco Holding SA</td>
-                    <td>Finance</td>
-                    <td>itau.com.br</td>
+                    <th>Bolsa</th>
+                    <th>Ticker</th>
+                    <th>Empresa</th>
+                    <th>valor</th>
+                    <th>variação</th>
+                    <th>número de ações</th>
                 </tr>
             </table>
         </main>
