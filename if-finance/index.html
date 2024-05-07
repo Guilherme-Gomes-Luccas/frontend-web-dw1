@@ -37,6 +37,32 @@
         <div id="addCardModal" onclick="closeModal(event)">
             <main>
                 <h2>Add card Ticker</h2>
+                <form onsubmit="createCard(event)">
+                    <fieldset>
+                        <legend>Informações da bolsa</legend>
+                        <label for="bolsa">Bolsa: </label>
+                        <input type="text" id="bolsa">
+
+                        <label for="codigo">Codigo: </label>
+                        <input type="text" id="codigo">
+
+                        <label for="empresa">Empresa: </label>
+                        <input type="text" id="empresa">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Valores da bolsa</legend>
+                        <label for="valor">Valor: </label>
+                        <input type="text" id="valor">
+
+                        <label for="variacao">Variação: </label>
+                        <input type="text" id="variacao">
+
+                        <label for="nAcoes">Número de ações: </label>
+                        <input type="text" id="nAcoes">
+                    </fieldset>
+                    <button>Add card</button>
+                </form>
             </main>
         </div>
     </body>

@@ -272,7 +272,7 @@ button{
 
 #addCardModal {
     position: absolute;
-    background: #0000007c;
+    background: #000000ca;
     top: 0;
     right: 0;
     left: 0;
@@ -283,9 +283,9 @@ button{
 }
 
 #addCardModal main{
-    width: 400px;
-    height: 500px;
-    background: #fff;
+    width: 440px;
+    height: 740px;
+    background: #666464;
     border-radius: 15px;
     padding: 20px;
     color: black;
@@ -293,6 +293,14 @@ button{
 
 #addCardModal h2 {
     margin: 0;
+}
+
+#addCardModal form {
+    flex-direction: column;
+}
+
+#addCardModal form fieldset{
+    width: 350px;
 }
 
 @media (width <= 674px) {

@@ -136,52 +136,52 @@ const allStock = [
     }
 ]
 
-function addCard(stock) {
+function addCard({bolsa, codigo, empresa, valor, variacao, nAcoes}) {
     const listaCards = document.querySelector('body > main')
     listaCards.innerHTML = listaCards.innerHTML + `
         <div class="card-ticker">
             <header>
-                <h2><span>${stock.bolsa}:</span> ${stock.codigo}</h2>
-                <h1>${stock.empresa}</h1>
+                <h2><span>${bolsa}:</span> ${codigo}</h2>
+                <h1>${empresa}</h1>
             </header>
             <main>
-                <p>R$ ${realFormat(+stock.valor/100)}</p>
-                <span ${stock.variacao < 0 ? 'style="background: #FF0000;"' : ''}> ${stock.variacao < 0 ? '▼' : '▲'} ${stock.variacao}%</span>
-                <span>R$ ${realFormat((stock.valor/100) * (stock.variacao/100))}</span>
+                <p>R$ ${realFormat(+valor/100)}</p>
+                <span ${variacao < 0 ? 'style="background: #FF0000;"' : ''}> ${variacao < 0 ? '▼' : '▲'} ${variacao}%</span>
+                <span>R$ ${realFormat((valor/100) * (variacao/100))}</span>
             </main>
             <footer>
                 <div>
-                    <p>${stock.nAcoes}</p>
+                    <p>${nAcoes}</p>
                     <span>Ações</span>
                 </div>
                 <div>
-                    <p>R$ ${realFormat(stock.nAcoes * (stock.valor/100))}</p>
+                    <p>R$ ${realFormat(nAcoes * (valor/100))}</p>
                     <span>Posição</span>
                 </div>
             </footer>
         </div>`
 }
 
-function addTable(stock){
+function addTable({bolsa, codigo, empresa, setor, site, valor, variacao, nAcoes}){
     const inserirLinhasDestaque = document.querySelector('#destaqueTable')
     inserirLinhasDestaque.innerHTML = inserirLinhasDestaque.innerHTML +  `
         <tr>
-            <td>${stock.bolsa}</td>
-            <td>${stock.codigo}</td>
-            <td>${stock.empresa}</td>
-            <td>${stock.setor}</td>
-            <td>${stock.site}</td>
+            <td>${bolsa}</td>
+            <td>${codigo}</td>
+            <td>${empresa}</td>
+            <td>${setor}</td>
+            <td>${site}</td>
         </tr>
     `
     const inserirLinhasAcoes = document.querySelector('#acoesTable')
     inserirLinhasAcoes.innerHTML = inserirLinhasAcoes.innerHTML +  `
         <tr>
-            <td>${stock.bolsa}</td>
-            <td>${stock.codigo}</td>
-            <td>${stock.empresa}</td>
-            <td>${stock.valor}</td>
-            <td>${stock.variacao}</td>
-            <td>${stock.nAcoes}</td>
+            <td>${bolsa}</td>
+            <td>${codigo}</td>
+            <td>${empresa}</td>
+            <td>${valor}</td>
+            <td>${variacao}</td>
+            <td>${nAcoes}</td>
         </tr>
     `
 }
@@ -211,11 +211,30 @@ const openModal = () => {
     modal.style.display = 'flex';
 }
 
-const closeModal = (event) => {
+const closeModal = (event, id) => {
     const modal = document.getElementById('addCardModal')
 
-    if (event.target.id === 'addCardModal') {
+    if (event?.target?.id === 'addCardModal' || id === 'addCardModal') {
         modal.style.display = 'none';
     }
     
+}
+
+const createCard = (event) => {
+    event.preventDefault();
+
+    const {bolsa, codigo, empresa, valor, variacao, nAcoes} = event.target.elements
+
+    addCard({
+        bolsa: bolsa.value,
+        codigo: codigo.value,
+        empresa: empresa.value,
+        valor: valor.value,
+        variacao: variacao.value,
+        nAcoes: nAcoes.value
+    })
+
+    bolsa.value = ''
+
+    closeModal(null, 'addCardModal')
 }
