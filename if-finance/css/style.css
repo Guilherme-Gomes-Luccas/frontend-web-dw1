@@ -261,6 +261,40 @@ nav div{
     display: none;
 }
 
+button{
+    background: #057416;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#addCardModal {
+    position: absolute;
+    background: #0000007c;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#addCardModal main{
+    width: 400px;
+    height: 500px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    color: black;
+}
+
+#addCardModal h2 {
+    margin: 0;
+}
+
 @media (width <= 674px) {
     nav ul {
         display: none;

@@ -186,12 +186,6 @@ function addTable(stock){
     `
 }
 
-let cont = 0;
-
-function addRowspan(){
-
-}
-
 function realFormat(valor){
     return valor.toFixed(2).toString().replace('.',',')
 }
@@ -210,4 +204,18 @@ function loadCards() {
 
 function loadTables() {
     allStock.map(addTable)
+}
+
+const openModal = () => {
+    const modal = document.getElementById('addCardModal')
+    modal.style.display = 'flex';
+}
+
+const closeModal = (event) => {
+    const modal = document.getElementById('addCardModal')
+
+    if (event.target.id === 'addCardModal') {
+        modal.style.display = 'none';
+    }
+    
 }
