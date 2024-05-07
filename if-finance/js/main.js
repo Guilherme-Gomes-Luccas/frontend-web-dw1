@@ -223,18 +223,22 @@ const closeModal = (event, id) => {
 const createCard = (event) => {
     event.preventDefault();
 
-    const {bolsa, codigo, empresa, valor, variacao, nAcoes} = event.target.elements
+    //const {bolsa, codigo, empresa, valor, variacao, nAcoes} = event.target.elements
+    //addCard({
+    //    bolsa: bolsa.value,
+    //    codigo: codigo.value,
+    //    empresa: empresa.value,
+    //    valor: valor.value,
+    //    variacao: variacao.value,
+    //    nAcoes: nAcoes.value
+    //})
 
-    addCard({
-        bolsa: bolsa.value,
-        codigo: codigo.value,
-        empresa: empresa.value,
-        valor: valor.value,
-        variacao: variacao.value,
-        nAcoes: nAcoes.value
-    })
+    const formData = new FormData(event.target)
+    const stock = Object.fromEntries(formData)
 
-    bolsa.value = ''
+    addCard(stock)
+
+    event.target.reset()
 
     closeModal(null, 'addCardModal')
 }
