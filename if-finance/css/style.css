@@ -270,7 +270,7 @@ button{
     cursor: pointer;
 }
 
-#addCardModal {
+.modal {
     position: absolute;
     background: #000000ca;
     top: 0;
@@ -282,7 +282,7 @@ button{
     align-items: center;
 }
 
-#addCardModal main{
+.modal main{
     width: 440px;
     height: 740px;
     background: #666464;
@@ -291,15 +291,15 @@ button{
     color: black;
 }
 
-#addCardModal h2 {
+.modal h2 {
     margin: 0;
 }
 
-#addCardModal form {
+.modal form {
     flex-direction: column;
 }
 
-#addCardModal form fieldset{
+.modal form fieldset{
     width: 350px;
 }
 

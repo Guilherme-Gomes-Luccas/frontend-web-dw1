@@ -83,6 +83,8 @@ console.log(user[mostrar])
 console.log(user.email)
 console.log(user.endereco.rua) */
 
+const token = " " //adicione seu token
+
 const allStock = [
     {
         bolsa: "NASDAQ", 
@@ -206,16 +208,24 @@ function loadTables() {
     allStock.map(addTable)
 }
 
-const openModal = () => {
-    const modal = document.getElementById('addCardModal')
+const openModal = (idModal) => {
+    const modal = document.getElementById(idModal)
     modal.style.display = 'flex';
 }
 
 const closeModal = (event, id) => {
-    const modal = document.getElementById('addCardModal')
+    const modal = document.getElementById(id)
 
-    if (event?.target?.id === 'addCardModal' || id === 'addCardModal') {
+    if (id) {
+        const modal = document.getElementById(id)
+        modal.style.display = 'none'
+        return
+    }
+
+    if (event?.target?.className === "modal") {
+        const modal = document.getElementById(event.target.id)
         modal.style.display = 'none';
+        return
     }
     
 }
@@ -241,4 +251,28 @@ const createCard = (event) => {
     event.target.reset()
 
     closeModal(null, 'addCardModal')
+}
+
+const createApiCard = async (event) => {
+    event.preventDefault();
+
+    const {codigo, nAcoes} = event.target.elements
+
+    const response = await fetch(`https://finnhub.io/api/v1/quote?symbol=${codigo.value}&token=${token}`)
+    const result = await response.json()
+
+    const response2 = await fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${codigo.value}&token=${token}`)
+    const profile = await response2.json()
+
+    addCard({
+        bolsa: profile.exchange.split(' ')[0],
+        codigo: codigo.value,
+        empresa: profile.name,
+        valor: result.c * 100,
+        variacao: result.d,
+        nAcoes: nAcoes.value
+    })
+
+    event.target.reset()
+    closeModal(null, 'addApiModal')
 }
