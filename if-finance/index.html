@@ -23,7 +23,7 @@
                     <li><a href="./contato.html">Contato</a></li>
                     <li><button onclick="openModal('addFormModal')">ADD card</button></li>
                     <li><button onclick="openModal('addApiModal')">Test API</button></li>
-
+                    
                 </ul>
                 <div>
                     <img src="./img/menu-svgrepo-com.svg" alt="Menu">
@@ -64,6 +64,38 @@
                         <input type="text" id="nAcoes" name="nAcoes">
                     </fieldset>
                     <button>Add card</button>
+                </form>
+            </main>
+        </div>
+
+        <div id="editFormModal" class="modal" onclick="closeModal(event)">
+            <main>
+                <h2>Edit card Ticker</h2>
+                <form onsubmit="createCard(event)">
+                    <fieldset>
+                        <legend>Informações da bolsa</legend>
+                        <label for="bolsa">Bolsa: </label>
+                        <input type="text" id="e-bolsa" name="e-bolsa">
+
+                        <label for="codigo">Codigo: </label>
+                        <input type="text" id="e-codigo" name="e-codigo">
+
+                        <label for="empresa">Empresa: </label>
+                        <input type="text" id="e-empresa" name="e-empresa">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Valores da bolsa</legend>
+                        <label for="valor">Valor: </label>
+                        <input type="text" id="e-valor" name="e-valor">
+
+                        <label for="variacao">Variação: </label>
+                        <input type="text" id="e-variacao" name="e-variacao">
+
+                        <label for="nAcoes">Número de ações: </label>
+                        <input type="text" id="e-nAcoes" name="e-nAcoes">
+                    </fieldset>
+                    <button>Edit card</button>
                 </form>
             </main>
         </div>

@@ -88,12 +88,32 @@ body > footer {
     justify-content: center;
 }
 
+.card-menu{
+    display: none;
+    position: absolute;
+    background: #000000ca;
+    border-radius: 20px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-menu span{
+    cursor: pointer;
+    padding: 20px;
+}
+
 .card-ticker{
     width: 280px;
     height: fit-content;
     background: #351801;
     border-radius: 20px;
     padding: 12px;
+    position: relative;
 }
 
 .card-ticker header{
