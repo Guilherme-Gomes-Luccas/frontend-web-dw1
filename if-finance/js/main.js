@@ -375,7 +375,7 @@ const openEditModal = (event) => {
     inputValor.value = card.querySelector('main p ').dataset.valor
 
     const inputVariacao = document.getElementById('e-variacao')
-    inputVariacao.value = card.querySelector('main span:first-child').dataset.variacao
+    inputVariacao.value = card.querySelector('main > span').dataset.variacao
 
     const inputAcoes = document.getElementById('e-nAcoes')
     inputAcoes.value = card.querySelector('footer div p').innerText
